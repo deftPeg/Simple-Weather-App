@@ -23,8 +23,8 @@ h2 {
     font-weight: 300;
     line-height: 2.5rem;
     text-align: center;
-    padding:2rem;
-    margin-top: 2rem;
+    padding:1.5rem;
+    margin-top: 3rem;
 }
 
 /* Declaring a Container for Flex Purposes which will hold al elements */
@@ -41,7 +41,7 @@ h2 {
 
 /* Input Field */
 #inputArea{
-    margin-top: 1rem;
+    margin-top: 2rem;
     padding: 1 rem;
     width: 30%;
     height: 2.5rem;
@@ -100,7 +100,7 @@ input, input[type="text"], input:focus {
  /* Styling the search button */
  #searchButton{
     margin: 2rem;
-    margin-top: 2rem;
+    margin-top: 4rem;
     padding: 0.6rem;
     font-size: 1.1rem;
     letter-spacing: 0.05rem;
