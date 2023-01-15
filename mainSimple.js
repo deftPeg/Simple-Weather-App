@@ -1,4 +1,4 @@
-// Declaring variable for DOM Manipulation
+// Declaring variable for DOM Manipulation adding comment for git purposes
 let background = document.getElementById("background")
 let temp = document.getElementById("box3")
 let description = document.getElementById("box6")
