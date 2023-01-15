@@ -1,0 +1,402 @@
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 2.5rem;
+    text-align: center;
+    padding:2rem;
+    margin-top: 2rem;
+}
+
+/* Declaring a Container for Flex Purposes which will hold al elements */
+#background{
+    display:flex;
+    width: 100vw;
+    justify-content: start;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding:0;
+}
+
+/* Input Field */
+#inputArea{
+    margin-top: 1rem;
+    padding: 1 rem;
+    width: 30%;
+    height: 2.5rem;
+    border: 1px solid rgb(227, 227, 227);
+    border-radius: 2rem;
+    background-color: white;
+    text-align: center;
+    background-image: url(./images/GPSpin-01.svg);
+    background-size: 0.8rem;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-position-x: 1rem;
+    background-position-y:center;
+}
+
+#errorMessageBox{
+    margin-top: 1rem;
+    padding: 2 rem;
+    width: 20%;
+    height: 10rem;
+    border: solid 2px rgb(55, 58, 60);
+    border-radius: 0.3rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    display:none;
+
+}
+
+#errorMessage{
+    margin:1.1rem;
+    justify-content: center;
+    color:rgb(55, 58, 60);
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 400;
+    display:none;
+}
+
+/* The text that get written by user in the input field */
+input, input[type="text"], input:focus {
+    border: none;
+    outline: none;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: transparent;
+}
+
+/* Styling the placeholder elements (before the user input */
+::placeholder {
+    text-align: center; 
+    font-size: 1.3rem;
+    color: rgba(78, 81, 80, 0.3);
+ }
+
+ /* Styling the search button */
+ #searchButton{
+    margin: 2rem;
+    margin-top: 2rem;
+    padding: 0.6rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.05rem;
+    font-weight: lighter;
+    text-align: center;
+    color: rgba(255,255,255,1);
+    background-color: rgb(55, 58, 60);
+    border: none;
+    border-radius: 1rem;
+    border: none;
+    margin-right: 1rem;
+ }
+
+
+/* AREA WHERE DATA REQUESTED APPEARS */
+/* outer response card like area */
+#responseArea{
+    margin-top: 0.2rem;
+    padding: 1.5rem;
+    width: 40vw;
+    height: 50vh;
+    background: rgba(255,255,255,0.4);
+    border: white solid .15rem;
+    border-radius: 0.8rem;
+    display: none;
+}
+
+.innerResponseArea{
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 0.8rem;
+    display: grid;
+    grid-template-columns: repeat (2, 1fr);
+    grid-template-rows: 1fr 1fr 3fr 1fr 1fr;
+    grid-gap: 0.3rem;
+        grid-template-areas: 
+        "b1 b1"
+        "b2 b2"
+        "b3 b5"
+        "b4 b6"
+        "b7 b7";
+}
+
+
+#box1{
+    grid-area: b1;
+    border-radius: 1rem;
+    padding: 0;
+    color: rgb(140, 30, 30);
+    font-size: 3rem;
+    text-align: center;
+}
+
+#box2{
+    grid-area: b2;
+    border-radius: 0.7rem;
+    color: rgb(120,120,120);
+    text-align: center;
+    font-size: 0.6rem;;
+}
+
+#box3{
+    grid-area: b3;
+    border-radius: 1rem;
+    color: rgb(60,60,60);
+    display:flex;
+    align-content: center;
+    justify-content: center;
+    margin:auto;
+    font-size: 7rem;
+}
+
+#box4{
+    grid-area: b4;
+    color: rgb(80,80,80);
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: -1.5rem;;
+}
+
+#box5{
+    grid-area: b5;
+    border-radius: 0.8rem;
+    text-align: center;
+    padding: 0.3rem;
+    font-size: 1rem;
+}
+#box6{
+    grid-area: b6;
+    color: rgb(80,80,80);
+    text-align: center;
+    margin-top: -1.7rem;;
+}
+#box7{
+    grid-area: b7;
+    padding: 0.3rem;
+    align-items: center;
+}
+
+.resetButton{
+    margin: auto;
+    padding: 0.5rem;
+    width: 40%;
+    font-size: 0.8rem;
+    letter-spacing: 0.05rem;
+    font-weight: lighter;
+    text-align: center;
+    color: rgba(255,255,255,1);
+    background-color: rgb(140, 30, 30);
+    border: none;
+    border-radius: 0.5rem;
+    border: none;
+    align-content: center;
+    justify-content: center;
+
+}
+
+#tempNumber{
+    font-size: 4rem;
+}
+
+/* BACKGROUND COLOURS ACCORDING TO THE DATA RESULTS */
+.backgroundColor-Home{
+    background-image: linear-gradient( #2797d8, 45%,  #87CDF6 45%, #CFFFF6);
+}
+
+.backgroundColor-Clear{
+    background-image: linear-gradient( rgb(243, 159, 13), rgb(234, 187, 59));
+
+}
+
+.backgroundColor-Rain{
+    background-image: linear-gradient( rgb(4, 48, 120), rgb(79, 110, 131));
+}
+
+.backgroundColor-Clouds{
+    background-image: linear-gradient( rgb(47, 68, 82), rgb(89, 119, 138));
+
+}
+
+.backgroundColor-Wind{
+    background-image: linear-gradient( rgb(8, 82, 202), rgb(137, 160, 175), rgb(8, 82, 202), rgb(8, 82, 202), rgb(137, 160, 175), rgb(8, 82, 202), rgb(8, 82, 202), rgb(137, 160, 175), rgb(8, 82, 202));
+}
+
+.backgroundColor-Thunderstorm{
+    background-image: linear-gradient( rgb(31, 47, 58), rgb(33, 54, 68));
+}
+
+.photo-Clear{
+    background-image: url(./images/clearSkies-01.svg);
+    background-size: 8.5rem;
+    background-repeat: no-repeat;
+    background-position-y: -0.4rem;
+    background-position-x:center;
+}
+
+.photo-Rain{
+    background-image: url(./images/raining-01.svg);
+    background-size: 9rem;
+    background-repeat: no-repeat;
+    background-position-y: -0.4rem;
+    background-position-x:center;
+}
+
+.photo-Clouds{
+    background-image: url(./images/Cloudy-01.svg);
+    background-size: 9.5rem;
+    background-repeat: no-repeat;
+    background-position-y: -0.8rem;
+    background-position-x:center;
+}
+
+.photo-Wind{
+    background-image: url(./images/Windy-01.svg);
+    background-size: 11rem;
+    background-repeat: no-repeat;
+    background-position-y: 1rem;
+    background-position-x:2rem;
+}
+
+.photo-Thunderstorm{
+    background-image: url(./images/Tstorms-01.svg);
+    background-size: 8.5rem;
+    background-repeat: no-repeat;
+    background-position-y: 0;
+    background-position-x:center;
+}
+
+/* Loading Component */
+#progressBar{
+    margin-top: 4rem;
+    width: 50vw;
+    /* height:3rem; */
+    background-color: rgba(255,255,255,0.4);
+    border: none;
+    border-radius: 0.3rem;
+    display:none
+
+}
+#loadingBar{
+    width: 1%;
+    height:30px;
+    background-color: rgb(8, 63, 117);
+    border: none;
+    border-radius: 0.3rem;
+    display: none
+
+
+
+}
+
+/* MOBILE DEVICES */
+@media only screen and (max-width: 700px){
+    #inputArea{
+        width:50vw;
+
+    }
+
+    input, input[type="text"], input:focus {
+        font-size: 1.5rem;
+    }
+
+    #responseArea{
+        width: 80vw;
+        max-width: 80vw;
+    }
+
+    h2{
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+    #box1{
+        font-size: 2rem;
+    }
+    #box3{
+        font-size: 5rem;
+    }
+}
+
+/* TABLETS */
+@media only screen and (max-width:900px){
+    #responseArea{
+        width: 70vw;
+        max-width: 80vw;
+    }
+
+    #inputArea{
+        width:50vw;
+
+    }
+
+    input, input[type="text"], input:focus {
+        font-size: 1.5rem;
+    }
+
+
+}
+
+@media only screen and (max-width:1020px){
+    #responseArea{
+        width: 60vw;
+    }
+    #inputArea{
+        width:50vw;
+
+    }
+
+    input, input[type="text"], input:focus {
+        font-size: 1.5rem;
+    }
+    .photo-Clouds{
+        background-size: 6rem;
+        background-position-y: center;
+
+    }
+    .photo-Clear{
+        background-size: 5rem;
+        background-position-y: center;
+
+    }
+    .photo-Wind{
+        background-size: 6rem;
+        background-position-y: center;;
+
+    }
+    .photo-Thunderstorm{
+        background-size: 6rem;
+        background-position-y: center;;
+
+    }
+    .photo-Rain{
+        background-size: 6rem;
+        background-position-y: center;;
+
+    }
+}
