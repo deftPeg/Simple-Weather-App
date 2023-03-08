@@ -19,12 +19,12 @@ body {
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: rem;
     font-weight: 300;
     line-height: 2.5rem;
     text-align: center;
     padding:1.5rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 /* Declaring a Container for Flex Purposes which will hold al elements */
@@ -317,13 +317,31 @@ input, input[type="text"], input:focus {
 
 /* MOBILE DEVICES */
 @media only screen and (max-width: 700px){
+ 
     #inputArea{
-        width:50vw;
-
+        margin-top: 2rem;
+        padding: 0.5 rem;
+        width: 60%;
+        height: 2.5rem;
+        border: 1px solid rgb(227, 227, 227);
+        border-radius: 2rem;
+        background-color: white;
+        text-align: center;
+        background-image: url(./images/GPSpin-01.svg);
+        background-size: 0.8rem;
+        background-origin: border-box;
+        background-repeat: no-repeat;
+        background-position-x: 1rem;
+        background-position-y:center;
     }
-
     input, input[type="text"], input:focus {
-        font-size: 1.5rem;
+        border: none;
+        outline: none;
+        padding-top: 0.1rem;
+        padding-bottom: 0.1rem;
+        font-size: 0.5rem;
+        text-align: center;
+        background-color: transparent;
     }
 
     #responseArea{
@@ -332,8 +350,8 @@ input, input[type="text"], input:focus {
     }
 
     h2{
-        font-size: 2rem;
-        line-height: 2.5rem;
+        font-size: 1.8rem;
+        line-height: 2rem;
     }
     #box1{
         font-size: 2rem;
